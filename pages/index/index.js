@@ -8,12 +8,12 @@ const app = getApp()
 Page({
   data: {
     motto: 'Hello World',
-    userInfo: {},
   },
 
   onLoad() {
-    util.calculateEqualPrincipal(50, 30, 4.5);
-    util.calculateEqualInterest(50, 30, 4.5);
+    util.calculateEqualPrincipal(500000, 360, 0.045/12);
+    util.calculateEqualInterest(500000, 360, 0.045/12);
+    
   }
 
 })

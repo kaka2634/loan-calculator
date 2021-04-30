@@ -1,35 +1,35 @@
-<!--index.wxml-->
+index.wxml
 <view class="page-body">
-	<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+	<mp-form id="form">
 		<mp-cells title="贷款计算器">
-			<mp-cell prop="贷款金额" title="贷款金额" ext-class="">
-				<input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="贷款金额" />
+			<mp-cell title="贷款金额" >
+				<input  class="weui-input" placeholder="贷款金额" />
 			</mp-cell>
-			<mp-cell prop="贷款年限" title="贷款年限" ext-class="">
-				<input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入贷款年限" />
+			<mp-cell title="贷款年限" >
+				<input class="weui-input" placeholder="请输入贷款年限" />
 			</mp-cell>
-			<mp-cell prop="贷款利率" title="贷款利率" ext-class="">
-				<input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入贷款利率" />
+			<mp-cell title="贷款利率" >
+				<input  class="weui-input" placeholder="请输入贷款利率" />
 			</mp-cell>
-			<mp-cell prop="还款方式" title="还款方式" ext-class="">
-				<input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入还款方式" />
+			<mp-cell  title="还款方式" >
+				<input  class="weui-input" placeholder="请输入还款方式" />
 			</mp-cell>
 		</mp-cells>
 
     <mp-cells title="投资收益">
-			<mp-cell prop="剩余资金" title="剩余资金" ext-class="">
-				<input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入贷款后剩余资金" />
+			<mp-cell title="剩余资金" >
+				<input  class="weui-input" placeholder="请输入贷款后剩余资金" />
 			</mp-cell>
-			<mp-cell prop="每月收入" title="预估每月收入" ext-class="">
-				<input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入预估每月收入" />
+			<mp-cell  title="预估每月收入" >
+				<input class="weui-input" placeholder="请输入预估每月收入" />
 			</mp-cell>
-      <mp-cell prop="预估投资收益率" title="期望年收益率" ext-class="">
-				<input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入期望投资收益率" />
+      <mp-cell title="期望年收益率" >
+				<input  class="weui-input" placeholder="请输入期望投资收益率" />
 			</mp-cell>
 		</mp-cells>
 	</mp-form>
 
 	<view class="weui-btn-area">
-		<button class="weui-btn" type="primary" bindtap="submitForm">开始计算</button>
+		<button class="weui-btn" type="primary" >开始计算</button>
 	</view>
 </view>
