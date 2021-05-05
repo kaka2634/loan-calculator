@@ -1,35 +1,50 @@
-index.wxml
-<view class="page-body">
-	<mp-form id="form">
-		<mp-cells title="贷款计算器">
-			<mp-cell title="贷款金额" >
-				<input  class="weui-input" placeholder="贷款金额" />
-			</mp-cell>
-			<mp-cell title="贷款年限" >
-				<input class="weui-input" placeholder="请输入贷款年限" />
-			</mp-cell>
-			<mp-cell title="贷款利率" >
-				<input  class="weui-input" placeholder="请输入贷款利率" />
-			</mp-cell>
-			<mp-cell  title="还款方式" >
-				<input  class="weui-input" placeholder="请输入还款方式" />
-			</mp-cell>
-		</mp-cells>
+<view class="page">
+	<view class="page__bd">
+		<mp-form id="form">
+			<mp-cells title="贷款计算器">
+				<mp-cell title="贷款金额">
+					<input class="weui-input" value="{{loanAmountDevideTenThousand}}" bindinput="loanAmountChange" placeholder="请输入贷款金额" />
+					<view slot="footer">
+						<view style="display: inline-block;vertical-align:middle; font-size: 17px;">万元</view>
+					</view>
+				</mp-cell>
+				<mp-cell title="贷款年限">
+					<input class="weui-input" value="{{loanYear}}" bindinput="loanYearChange" placeholder="请输入贷款年限" />
+					<view slot="footer">
+						<view style="display: inline-block;vertical-align:middle; font-size: 17px;">年</view>
+					</view>
+				</mp-cell>
+				<mp-cell title="贷款利率">
+					<input class="weui-input" value="{{yearlyInterestRateMultiHundred}}" bindinput="yearlyInterestRateChange" placeholder="请输入贷款利率" />
+					<view slot="footer">
+						<view style="display: inline-block;vertical-align:middle; font-size: 17px;">%</view>
+					</view>
+				</mp-cell>
+				<!-- <mp-cell title="还款方式">
+					<input class="weui-input" placeholder="请输入还款方式" />
+				</mp-cell> -->
+			</mp-cells>
 
-    <mp-cells title="投资收益">
-			<mp-cell title="剩余资金" >
-				<input  class="weui-input" placeholder="请输入贷款后剩余资金" />
-			</mp-cell>
-			<mp-cell  title="预估每月收入" >
-				<input class="weui-input" placeholder="请输入预估每月收入" />
-			</mp-cell>
-      <mp-cell title="期望年收益率" >
-				<input  class="weui-input" placeholder="请输入期望投资收益率" />
-			</mp-cell>
-		</mp-cells>
-	</mp-form>
-
+			<!-- <mp-cells title="投资收益">
+				<mp-cell title="剩余资金">
+					<input class="weui-input" placeholder="请输入贷款后剩余资金" />
+				</mp-cell>
+				<mp-cell title="预估每月收入">
+					<input class="weui-input" placeholder="请输入预估每月收入" />
+				</mp-cell>
+				<mp-cell title="期望年收益率">
+					<input class="weui-input" placeholder="请输入期望投资收益率" />
+				</mp-cell>
+			</mp-cells> -->
+		</mp-form>
+	</view>
 	<view class="weui-btn-area">
-		<button class="weui-btn" type="primary" >开始计算</button>
+		<button class="weui-btn" bindtap="submitForm" type="primary">开始计算</button>
+	</view>
+	<view>
+		{{equalPrincipalMessage}}
+	</view>
+	<view>
+		{{equalInterestMessage}}
 	</view>
 </view>

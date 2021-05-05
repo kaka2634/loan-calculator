@@ -16,16 +16,17 @@ const calculateEqualPrincipal = (loanAmount, loanMonth, monthlyInterestRate) => 
     monthlyInterest = monthlyInterest  - decsInterest;
 
   }
-  console.log(`第一个月应还 ${monthlyPayments[0]}， 每月递减  ${decsInterest}`)
-  console.log(`总利息： ${loanInterest} `);
+  let message = `等额本金：\n`;
+  message +=`第一个月应还 ${monthlyPayments[0].toFixed(2)}， 每月递减  ${decsInterest.toFixed(2)}\n`;
+  message +=`总利息： ${loanInterest.toFixed(2)} `;
 
   let result = {
-    type: 'EqualPrincipal',
-    monthlyPrincipal: monthlyPrincipal,
-    monthlyInterests: monthlyInterests,
-    monthlyPayments: monthlyPayments,
-    loanInterest: loanInterest,
-    decsInterest: decsInterest
+      monthlyPrincipal: monthlyPrincipal,
+      monthlyInterests: monthlyInterests,
+      monthlyPayments: monthlyPayments,
+      loanInterest: loanInterest,
+      decsInterest: decsInterest,
+      message : message
   }
   return result;
 }
@@ -34,14 +35,14 @@ const calculateEqualInterest = (loanAmount, loanMonth, monthlyInterestRate) => {
   let factor = Math.pow((1 + monthlyInterestRate), loanMonth);
   let monthlyPayment = loanAmount * (monthlyInterestRate * factor) / (factor - 1);
   let loanInterest = monthlyPayment * loanMonth - loanAmount;
-  
-  console.log(`每月应还 ${monthlyPayment}`)
-  console.log(`总利息： ${loanInterest} `);
+  let message = `等额本息：\n`;
+  message +=`每月应还 ${monthlyPayment.toFixed(2)}\n`;
+  message +=`总利息： ${loanInterest.toFixed(2)} `;
   
   let result = {
-    type: 'EqualInterest',
-    monthlyPayment: monthlyPayment,
-    loanInterest: loanInterest,
+      monthlyPayment: monthlyPayment,
+      loanInterest: loanInterest,
+      message : message
   }
   return result;
 
