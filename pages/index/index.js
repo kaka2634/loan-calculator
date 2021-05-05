@@ -11,7 +11,8 @@ Page({
     loanYear: 30,
     yearlyInterestRateMultiHundred: 4.8,
     equalPrincipalMessage: '',
-    equalInterestMessage: ''
+    equalInterestMessage: '',
+    showClearButton: false
   },
 
   onLoad() {
@@ -37,7 +38,6 @@ Page({
   },
 
   submitForm() {
-    console.log(this.data.loanAmountDevideTenThousand, this.loanYear, this.yearlyInterestRateMultiHundred);
     let loanAmount = this.data.loanAmountDevideTenThousand * 10000;
     let loanMonth = this.data.loanYear * 12;
     let monthlyInterestRate = this.data.yearlyInterestRateMultiHundred / (12 * 100);
@@ -45,7 +45,16 @@ Page({
     let result2 = util.calculateEqualInterest(loanAmount, loanMonth, monthlyInterestRate);
     this.setData({
         equalPrincipalMessage: result1.message,
-        equalInterestMessage: result2.message
+        equalInterestMessage: result2.message,
+        showClearButton: true
     });
+  },
+
+  clearResult() {
+    this.setData({
+      equalPrincipalMessage: '',
+      equalInterestMessage: '',
+      showClearButton: false
+  });
   }
 })

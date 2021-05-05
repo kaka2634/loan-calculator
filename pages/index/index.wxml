@@ -43,4 +43,5 @@
 	</view>
 	<text>{{equalPrincipalMessage}}</text>
 	<text>{{equalInterestMessage}}</text>
+	<button class="weui-btn weui-btn_default" wx:if="{{showClearButton}}"  bindtap="clearResult">清除结果</button>
 </view>
