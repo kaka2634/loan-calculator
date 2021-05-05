@@ -18,7 +18,7 @@ const calculateEqualPrincipal = (loanAmount, loanMonth, monthlyInterestRate) => 
   }
   let message = `等额本金：\n`;
   message +=`第一个月应还 ${monthlyPayments[0].toFixed(2)}， 每月递减  ${decsInterest.toFixed(2)}\n`;
-  message +=`总利息： ${loanInterest.toFixed(2)} `;
+  message +=`总利息： ${loanInterest.toFixed(2)} \n`;
 
   let result = {
       monthlyPrincipal: monthlyPrincipal,

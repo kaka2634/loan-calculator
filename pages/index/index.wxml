@@ -41,10 +41,6 @@
 	<view class="weui-btn-area">
 		<button class="weui-btn" bindtap="submitForm" type="primary">开始计算</button>
 	</view>
-	<view>
-		{{equalPrincipalMessage}}
-	</view>
-	<view>
-		{{equalInterestMessage}}
-	</view>
+	<text>{{equalPrincipalMessage}}</text>
+	<text>{{equalInterestMessage}}</text>
 </view>
