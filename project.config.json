@@ -28,11 +28,11 @@
 		},
 		"bundle": false,
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.16.1",
+	"libVersion": "2.14.4",
 	"appid": "wxe0f1867a6742520b",
 	"projectname": "loan-calculator",
 	"debugOptions": {
